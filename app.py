@@ -6,7 +6,7 @@ import pickle
 st.set_page_config(page_title="FarmCast", layout="wide")
 
 # ---------------- TITLE ---------------- #
-st.title("🌽 FarmCast System")
+st.title("FarmCast System")
 
 # ---------------- LOAD MODEL ---------------- #
 model = pickle.load(open("model.pkl", "rb"))
@@ -112,10 +112,10 @@ if st.button("Predict Yield"):
     st.bar_chart(importance_df.set_index('Feature').head(10))
 
     # ---------------- RECOMMENDATIONS ---------------- #
-    st.subheader("🧠 Recommendations")
+    st.subheader("Recommendations")
 
     if fertilizer_val == 0:
-        st.warning("🌱 Adding fertilizer can significantly increase yield")
+        st.warning("Adding fertilizer can significantly increase yield")
 
     if irrigation_val == 0 and rainfall < 300:
         st.warning("💧 Consider irrigation due to low rainfall")
